@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://blwya3175hxl7"]
+
+[ext_resource type="Script" uid="uid://bt8gcl3l2yih0" path="res://nodes/grass_shader.gd" id="1_r2s3o"]
+
+[node name="GrassShader" type="Node2D"]
+script = ExtResource("1_r2s3o")
+
+[node name="MaskViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="MaskCamera" type="Camera2D" parent="MaskViewport"]
+enabled = false

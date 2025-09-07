@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cio8xvjw44f3b"]
+
+[ext_resource type="Texture2D" uid="uid://busxa7owhqvrx" path="res://assets/player.png" id="1_u63mc"]
+[ext_resource type="Script" uid="uid://csot7edpf5gp7" path="res://nodes/player.gd" id="2_bms3g"]
+
+[node name="Player" type="Sprite2D"]
+texture = ExtResource("1_u63mc")
+offset = Vector2(0, -28)
+script = ExtResource("2_bms3g")

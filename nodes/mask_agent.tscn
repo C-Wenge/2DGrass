@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://0n5or36tsqoy"]
+
+[ext_resource type="Script" uid="uid://bvxqk1kderokv" path="res://nodes/mask_agent.gd" id="1_bu2vx"]
+[ext_resource type="PackedScene" uid="uid://dxjx4g67rr6tw" path="res://nodes/mask.tscn" id="2_jo6j2"]
+
+[sub_resource type="Curve" id="Curve_jo6j2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.37971, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_dnoq3"]
+curve = SubResource("Curve_jo6j2")
+
+[sub_resource type="Curve" id="Curve_u200c"]
+_data = [Vector2(0, 0.30803), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_15in6"]
+curve = SubResource("Curve_u200c")
+
+[node name="MaskAgent" type="Node2D"]
+script = ExtResource("1_bu2vx")
+_mask_scene = ExtResource("2_jo6j2")
+bend_curve = SubResource("CurveTexture_dnoq3")
+scale_curve = SubResource("CurveTexture_15in6")

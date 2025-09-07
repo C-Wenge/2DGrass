@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxjx4g67rr6tw"]
+
+[ext_resource type="Shader" uid="uid://dad1rn8xsuaxw" path="res://shaders/mask.gdshader" id="1_pn5j7"]
+[ext_resource type="Texture2D" uid="uid://cffpjhjxsb6fy" path="res://icon.svg" id="1_rbico"]
+
+[sub_resource type="Curve" id="Curve_pn5j7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.42728, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0787i"]
+curve = SubResource("Curve_pn5j7")
+
+[sub_resource type="Curve" id="Curve_yk00j"]
+_data = [Vector2(0, 0.501779), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_jm4ne"]
+curve = SubResource("Curve_yk00j")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0787i"]
+resource_local_to_scene = true
+shader = ExtResource("1_pn5j7")
+shader_parameter/radius = 0.5
+shader_parameter/bend = SubResource("CurveTexture_0787i")
+shader_parameter/scale = SubResource("CurveTexture_jm4ne")
+shader_parameter/weight = 1.0
+
+[node name="Mask" type="Sprite2D"]
+material = SubResource("ShaderMaterial_0787i")
+texture = ExtResource("1_rbico")
